@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_singlieml_order" model="ir.ui.view">
+            <field name="name">E-mail Documento</field>
+            <field name="model">email.order_doc</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+			<form string="Invia Documento/i per Email" >
+    			<field name="to"/>
+   				 <newline/>
+    			<field name="subject"/>
+    			<newline/>
+    			<separator string="Message:" colspan="4"/>
+    			<field name="text" nolabel="1" colspan="4"/>
+    				<group colspan="4" col="4">
+                        <button special="cancel" string="Cancel"  icon="gtk-cancel"/>
+                        <button name="send_mails" string="Invia " type="object" icon="terp-stock_effects-object-colorize"/>
+                    </group>
+        
+			</form>    
+             </field>
+        </record>
+			   
+
+        <act_window name="Invia Email Documento"
+            res_model="email.order_doc"
+            src_model="sale.order"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="view_singlieml_order"/>
+
+    
+   </data>
+</openerp>
