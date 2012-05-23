@@ -162,7 +162,7 @@ class email_order_doc(osv.osv_memory):
      
     import re
     p = pooler.get_pool(cr.dbname)
-    import pdb;pdb.set_trace()
+    #import pdb;pdb.set_trace()
     user = p.get('res.users').browse(cr, uid, uid, context)
     #file_name = user.company_id.name.replace(' ','_')+'_'+_("Conferma_ordine")
     file_name = ("Conferma_ordine")+'_'+str(data['form']['danrv']) 
